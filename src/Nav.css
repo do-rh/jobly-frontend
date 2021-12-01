@@ -1,0 +1,23 @@
+.Nav {
+    background-color: rgb(3, 39, 104);
+    text-align: center;
+    font-weight: bold;
+}
+
+.Nav a {
+    padding: 0.5em 0;
+    width: 10em;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+.Nav a:hover {
+    background-color: grey;
+    color: white !important;
+}
+
+.Nav a.active {
+    font-weight: bold;
+    color: rgb(255, 221, 87);
+}

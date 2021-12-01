@@ -1,0 +1,12 @@
+.Home {
+    text-align: center;
+    margin: 6em;
+    color: rgb(211, 226, 255);
+    font-weight: bolder;
+    height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+}

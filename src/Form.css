@@ -1,0 +1,29 @@
+.SearchForm, .SignupForm{
+    width:100%;
+}
+
+form{
+    margin: 5px;
+    text-align: center;
+  }
+  
+input {
+      height: 100%;
+      width: 50%;
+      display: block;
+      margin: auto;
+  }
+body{
+    box-sizing: border-box;
+  }
+
+label {
+    font-weight: bold;
+    margin-top: 5px;
+    color: rgb(5, 13, 99);
+}
+
+button {
+  margin: 1em;
+  display: inline-block;
+}
