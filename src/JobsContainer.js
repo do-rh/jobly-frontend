@@ -18,7 +18,7 @@ import "./JobsContainer.css";
  *        errors = [error1, ...]
  * Context: Consumes UserContext
  * 
- * Routes -> JobsContainer -> JobList
+ * Routes -> JobsContainer -> SearchForm, JobsList
  * 
  * Location: /jobs
  */
