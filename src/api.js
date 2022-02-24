@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 //Question: is the config folder a shared resource in that we should verify the token
 // or should we just decode the token?
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_URL = "https://jobly-backend-final.herokuapp.com" || "http://localhost:3001";
 
 /** API Class.
  *

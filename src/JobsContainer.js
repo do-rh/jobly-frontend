@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useCallback } from "react";
 import { Redirect } from "react-router-dom";
 
 import UserContext from "./UserContext";
@@ -29,7 +29,8 @@ function JobsContainer() {
 
     const currUser = useContext(UserContext);
 
-    //Upon searchTerm Change, sets companyList
+
+    // Upon searchTerm Change, sets companyList
     useEffect(function fetchJobsWhenMounted() {
         async function fetchJobs() {
             try {
@@ -37,21 +38,23 @@ function JobsContainer() {
                 setJobList(jobsResult);
             } catch (err) {
                 setErrors(err);
-            }
-        }
+            };
+        };
         fetchJobs();
     }, [searchTerm]);
 
-    if(!currUser) return <Redirect to="/"/>
 
-    //handles job search in SearchForm
-    function handleSearch(search) {
+    // handles job search in SearchForm
+    const handleSearch = useCallback((search) => {
         setSearchTerm(search);
-    }
+    }, []);
 
-    if (errors) return <Error errors={errors}/>
-    else if (!jobList) return <i>Loading...</i>
-    else return (
+
+    if (currUser == null) return <Redirect to="/" />
+    if (errors != null) return <Error errors={errors} />
+    if (jobList == null) return <i>Loading...</i>
+
+    return (
         <div className="JobsContainer">
             <SearchForm handleSearch={handleSearch} />
             {jobList.length === 0
@@ -59,7 +62,6 @@ function JobsContainer() {
                 : <JobList jobList={jobList} />
             }
         </div>
-
     );
 }
 
